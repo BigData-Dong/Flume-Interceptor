@@ -9,7 +9,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 /*
  * @ClassName: LogTypeInterceptor
  * @projectName flumeInterceptor
@@ -44,10 +43,10 @@ public class LogTypeInterceptor implements Interceptor {
     @Override
     public List<Event> intercept(List<Event> events) {
         List<Event> list = new ArrayList<>();
-        events.forEach(item -> {
+        for(Event item : events){
             Event event = intercept(item);
             list.add(event);
-        });
+        }
         return list;
     }
 
